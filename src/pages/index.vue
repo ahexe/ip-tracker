@@ -12,6 +12,9 @@
 
     <!-- Result Window -->
     <ResultWindow />
+
+    <!-- Find My IP Icon -->
+    <MyIP />
   </div>
 </template>
 

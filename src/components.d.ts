@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
     Counter: typeof import('./components/Counter.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Map: typeof import('./components/Map.vue')['default']
+    MyIP: typeof import('./components/MyIP.vue')['default']
     README: typeof import('./components/README.md')['default']
     ResaultWindow: typeof import('./components/ResultWindow.vue')['default']
     Resualt: typeof import('./components/ResultWindow.vue')['default']

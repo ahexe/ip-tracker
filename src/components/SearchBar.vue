@@ -14,7 +14,7 @@
     mt-auto
     h-15
     bg-teal-700
-    sm:mb-10
+    sm:mb-5
     sm:w="60%"
     sm:rounded-2
     md:w="50%"
@@ -64,16 +64,18 @@
         rounded-r-2
         my-auto
         shadow-inner
+        text-5
+        hover:text-6
+        active:text="6.5"
+        transition="all"
+        duration="50"
       >
         <!-- Button Icon -->
         <div
           i-carbon-search
           mx-auto
           my-auto
-          text-5
           text-stone-200
-          hover:text-6
-          active:text-5
         />
       </button>
     </div>

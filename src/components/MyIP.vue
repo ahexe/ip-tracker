@@ -1,0 +1,33 @@
+<script setup language="ts">
+</script>
+
+<template>
+  <button
+    absolute
+    z-2
+    top-0
+    bottom-0
+    left-0
+    right-0
+    w="12"
+    h="12"
+    ml-auto
+    mr-5
+    mt-5
+    bg-zinc-900
+    rounded-full
+    p-1
+    shadow-xl
+    text="7.5"
+    hover:text="8"
+    active:text="8.5"
+    transition="all"
+    duration="50"
+  >
+    <div
+      text-stone-300
+      m-auto
+      i-carbon-location-person-filled
+    />
+  </button>
+</template>
