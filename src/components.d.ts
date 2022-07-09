@@ -10,10 +10,12 @@ declare module '@vue/runtime-core' {
     Footer: typeof import('./components/Footer.vue')['default']
     Map: typeof import('./components/Map.vue')['default']
     README: typeof import('./components/README.md')['default']
-    ResaultWindow: typeof import('./components/ResaultWindow.vue')['default']
-    Resualt: typeof import('./components/ResaultWindow.vue')['default']
+    ResaultWindow: typeof import('./components/ResultWindow.vue')['default']
+    Resualt: typeof import('./components/ResultWindow.vue')['default']
+    ResultWindow: typeof import('./components/ResultWindow.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SearchAndResult: typeof import('./components/SearchAndResult.vue')['default']
     SearchBar: typeof import('./components/SearchBar.vue')['default']
   }
 }

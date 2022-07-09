@@ -1,12 +1,11 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
   <!-- Search Section -->
   <div
     absolute
-    z-2
+    z-3
     top-0
     bottom-0
     left-0
@@ -15,8 +14,6 @@
     mt-auto
     h-15
     bg-teal-700
-    drop-shadow-xl
-    sm:shadow-xl
     sm:mb-10
     sm:w="60%"
     sm:rounded-2

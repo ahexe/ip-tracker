@@ -5,10 +5,13 @@
 <template>
   <div relative>
     <!-- Map -->
-    <Map h="100vh" />
+    <Map />
 
     <!-- Search Bar -->
     <SearchBar />
+
+    <!-- Result Window -->
+    <ResultWindow />
   </div>
 </template>
 

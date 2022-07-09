@@ -4,7 +4,7 @@ import leaflet from 'leaflet'
 const mymap = ref()
 
 onMounted(() => {
-  mymap.value = leaflet.map('map').setView([0, 0], 3)
+  mymap.value = leaflet.map('map').setView([0, 0], 10)
   leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© OpenStreetMap',
@@ -13,7 +13,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <div h="100vh">
     <div id="map" h="full" z-1 />
   </div>
 </template>
