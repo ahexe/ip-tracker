@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import leaflet from 'leaflet'
 
 const mymap = ref()

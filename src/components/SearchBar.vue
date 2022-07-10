@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useIpStore } from '~/store/ip'
+const { storeIP } = useIpStore()
+const enteredIp = ref('')
 </script>
 
 <template>
@@ -35,7 +38,8 @@
       <!-- Input Section -->
       <input
         id="ip_address"
-        type="search"
+        v-model="enteredIp"
+        type="text"
         name="ip_address"
         placeholder="Enter a valid IP address"
         h-10
@@ -55,6 +59,7 @@
         placeholder-teal="800/40"
         placeholder-text="3.4"
         sm:placeholder-text="4.5"
+        @keyup.enter="storeIP(enteredIp)"
       >
       <!-- Search Button -->
       <button
@@ -69,6 +74,7 @@
         active:text="6.5"
         transition="all"
         duration="50"
+        @click="storeIP(enteredIp)"
       >
         <!-- Button Icon -->
         <div
