@@ -1,7 +1,25 @@
 <script setup lang="ts">
+// use store
 import { useIpStore } from '~/store/ip'
+// use functions os store
 const { storeIP } = useIpStore()
+// use data of store
+const validIP = useIpStore()
+// get validation situation from store
+const isIpValid = ref()
+// update validation situation from store (in the start of app and after any changes)
+watchEffect(() => {
+  isIpValid.value = validIP.ipValidation
+})
+
+// store input while typing (two way binding)
 const enteredIp = ref('')
+
+// call storeIP function of store and clear the input felid
+function submitInput() {
+  storeIP(enteredIp.value)
+  enteredIp.value = ''
+}
 </script>
 
 <template>
@@ -56,10 +74,10 @@ const enteredIp = ref('')
         focus:outline-none
         focus:bg-stone-200
         text-teal-900
-        placeholder-teal="800/40"
+        :class="(isIpValid) ? 'placeholder-teal-800/40' : 'placeholder-red'"
         placeholder-text="3.4"
         sm:placeholder-text="4.5"
-        @keyup.enter="storeIP(enteredIp)"
+        @keyup.enter="submitInput()"
       >
       <!-- Search Button -->
       <button
@@ -74,7 +92,7 @@ const enteredIp = ref('')
         active:text="6.5"
         transition="all"
         duration="50"
-        @click="storeIP(enteredIp)"
+        @click="submitInput()"
       >
         <!-- Button Icon -->
         <div

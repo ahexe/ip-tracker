@@ -1,12 +1,16 @@
 <script setup lang="ts">
+// in first opening website information window should be closed
 const infoWindow = ref('close')
+// for hide this window, I set the height to 0
 const infoWindowHeight = ref(0)
+// I placed a button o top of this window to toggle it
 const toggleInfoWindow = () => {
   if (infoWindow.value === 'close')
     infoWindow.value = 'open'
   else
     infoWindow.value = 'close'
 }
+// this function run if window situation changed (set height to 50 for unhide the window)
 watchEffect(() => {
   if (infoWindow.value === 'open')
     infoWindowHeight.value = 50
@@ -40,7 +44,7 @@ watchEffect(() => {
     xl:w="35%"
     class="2xl:w-35%"
   >
-    <!-- Info Container Box -->
+    <!-- Info Container Box (for fix the bug of show info without info window, I'm using v-show) -->
     <div
       v-show="infoWindow === 'open'"
       grid
@@ -61,6 +65,8 @@ watchEffect(() => {
       lg:w="89%"
       xl:w="94%"
     >
+      <!-- Children of the info box -->
+      <!-- IP Address -->
       <div
         grid
         content-center
@@ -71,6 +77,7 @@ watchEffect(() => {
         <div>IP Address</div>
         <div>{{ '999.999.999.999' }}</div>
       </div>
+      <!-- Location (country, state and city) -->
       <div
         grid
         content-center
@@ -81,6 +88,7 @@ watchEffect(() => {
         <div>Location</div>
         <div>{{ 'Iran, Fars, Shiraz' }}</div>
       </div>
+      <!-- more info (should use router link) -->
       <div
         grid
         content-center
@@ -100,7 +108,7 @@ watchEffect(() => {
         </button>
       </div>
     </div>
-    <!-- Side Bar Hide And show Button -->
+    <!-- SideBar toggle Button -->
     <button
       rounded-t-2
       bg-teal-700
@@ -115,7 +123,7 @@ watchEffect(() => {
       mt="-7"
       @click="toggleInfoWindow()"
     >
-      <!-- Button Icon -->
+      <!-- Button Icon (for closing) -->
       <div
         v-if="infoWindow === 'open'"
         i-carbon-down-to-bottom
@@ -127,6 +135,7 @@ watchEffect(() => {
         transition="all"
         duration="50"
       />
+      <!-- Button Icon (for opening) -->
       <div
         v-else
         i-carbon-up-to-top
